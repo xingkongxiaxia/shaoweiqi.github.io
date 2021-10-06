@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="gr__shape2prog_csail_mit_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+              <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="shortcut icon" href="http://shape2prog.csail.mit.edu/images/favicon.ico">
+        <meta name="description" content="Counterfactual Data-Augmented Sequential Recommendation">
+        <meta name="keywords" content="Counterfactual Data-Augmented, Sequential Recommendation">
+
+        <title>Sequential Recommendation</title>
+        <link rel="stylesheet" href="asset/font.css">
+        <link rel="stylesheet" href="asset/main.css">
+
+    </head>
+
+    <body data-gr-c-s-loaded="true">
+
+        <div class="outercontainer">
+            <div class="container">
+
+                <div class="content project_title">
+                    <h1>Unbiased Sequential Recommendation with Latent Confounders</h1>
+                </div>
+
+                <div class="content project_headline">
+                    <center><h2>
+                      <font size="3">Anonymous Author</font>&nbsp;&nbsp;
+                   
+                </div>
+
+
+                
+
+
+                <div class="content">
+                    <div class="text">
+                        <h1>1. Abstract</h1>
+                        <p><font size=3>Sequential recommendation holds the promise of understanding user preference by capturing successive behavior correlations.
+Existing research essentially focus on designing different models for better fitting the offline datasets.
+However, the observational data may have been contaminated by the exposure or selection biases, which renders the learned sequential models unreliable.
+In order to solve this fundamental problem, in this paper, we propose to reformulate the sequential recommendation task with the potential outcome framework, where we are able to clearly understand the data bias mechanism and correct it by re-weighting the training instances with the inverse propensity score (IPS).
+For more robustness modeling, a clipping strategy is applied to the IPS estimation to reduce the variance of the learning objective. 
+To make our framework more practical, we design a parameterized model to remove the impact of the potential latent confounders.
+At last, we theoretically analysis the unbiasedness of the proposed framework under both vanilla and clipping IPS estimations.
+We conduct extensive experiment based on both synthetic and real-world datasets to demonstrate the effectiveness of our framework.</font></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="text">
+                        <h1>2. Illustration of the exposure bias in sequential recommendation. </h1>
+                        <div class="content project_headline">
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/intro.png" alt="Intro" style="margin:auto;max-width:80%">
+                        </div>
+                        <div class="text">
+                            <p><font size=3>Figure 1: The observed interaction between the
+user and the item is jointly determined by the exposure
+of the item and the user underlying sequential preference.
+While many items (e.g., B, C) can also reveal user sequential
+preference, they are not recommended, and thus have less
+opportunities to be observed and optimized.</font></p>
+                        </div>
+						<div class="content">
+                    <div class="text">
+						 <h1>3. Illustration of Our framework. </h1>
+                        <div class="content project_headline">
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/all.png" alt="Intro" style="margin:auto;max-width:80%">
+                        </div>
+                        <div class="text">
+                            <p><font size=3>Figure 2:Illustration of Our framework for Unbiased Sequential Recommendation with Latent Confounders  </font></p>
+                        </div>
+
+						<div class="content">
+						<h3>Contributions</h3>
+                            <p><ul class="download">
+							<font size=3>
+                            <li> We propose to solve the sequential recommendation task within the potential outcome framework for data bias correction, which, to the best of our knowledge, is the first time in the recommendation domain.</li>
+							<li>To realize the above idea, we design a three-channel GRU model to simultaneously capture the item correlations, model the latent confounders and estimate the IPS. </li>
+							<li>We analyze the unbiasedness of the proposed model from both expectation and variance perspectives, which builds the theoretical foundations of our model. </li>
+                            <li>We conduct extensive experiments based on both synthetic and real-world datasets to evaluate our proposed models.</li>
+                            </font>
+                        </ul></p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <h1>3. Main Results</h1>
+                    </div>
+
+                    <div class="content project_headline">
+					<div class="text">
+                            <p><font size=3>Table 1: Overall comparison between the baselines and our models(the last four lines).</font></p>
+                        </div>
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/result.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+                        
+                    </div>
+					
+                </div>
+				<div class="content">
+                    <div class="text">
+                        <h1>4. Code and Datasets</h1>
+
+						<h2> 4.1 Code <a href="https://drive.google.com/">[link:Google Driver]</font></a></h2>
+						
+						<div class="content project_headline">
+						<div class="text">
+                            <p><font size=3>Table 2: Structure of the code files [main program].</font></p>
+                        </div>
+						<div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/code.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+					
+                        
+                        
+                        </div>
+                        <h2>4.2 Datasets <a href="https://drive.google.com/">[link:Google Driver]</a></font></h2>
+						<div class="content project_headline">
+						<div class="text">
+                            <p><font size=3>Table 3: Statistics of the datasets used in our experiments.</font></p>
+                        </div>
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/data.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content">
+                    <div class="text">
+                        <h1>5. Usage</h1>
+						<p> <font size=4>5.1. Download the code</font></p>
+						<p> <font size=4>5.2. Download the dataset, and put it into data/dataset name/ folder.</font></p>
+						<p> <font size=4>5.3. run main.py file.</font></p>
+						<font size=3>
+                        <p> For example: python main.py --dataset mind --batch_size 64 --lr 0.01 --embed_dim 64 --clip 0.</p>
+                        where lr denotes learning rate  and clip  denotes  clipping strategy, more specifically, when we set clip == 0, that means without clipping strategy.
+                    </div>
+                </div>
+               
+                <div class="content">
+                    <div class="text">
+                        <h1>6. Detailed parameter search ranges</h1>
+						<ul class="download">
+						<font size=3>
+                            <li><p>Learning rate: [0.1,0.01,0.001,0.0001]</p></li>
+							<li><p>Batch size: [64,128,256,512,1024]</p></li>
+							<li><p>Embedding size:[32,64,128]</p></li>
+							<li><p>The clipping severity M: [0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]</p></li>
+						</font>
+                        </ul>
+						
+                    </div>
+                </div>
+
+
+                <div class="content">
+                    <div class="text">
+                        <h1>7. Runtime Environment</h1>
+						<ul class="download">
+						<font size=3>
+                            <li><p>System:Linux dell-PowerEdge-R730</p></li>
+							<li><p>CPU: Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz</p></li>
+							<li><p>CPU-Memory:25G</p></li>
+							<li><p>GPU:NVIDIA Corporation GV100 [TITAN V] (rev a1)</p></li>
+                            <li><p>GPU-Memory:12G</p></li>
+							<li><p>Pytorch: 1.7.0</p></li>
+							<li><p>CUDA:10.1</p></li>
+						</font>
+                        </ul>
+						
+                    </div>
+                </div>
+
+<div id="download_plus_animation"></div></body></html>
+
+
